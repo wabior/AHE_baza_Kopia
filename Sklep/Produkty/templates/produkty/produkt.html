@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkt</title>
+</head>
+<body>
+<h1>Sklep internetowy Jaro z Polski</h1>
+    lista produktów:
+<br />
+{% if prod_list %}
+    <ul>
+    {% for produkt in prod_list %}
+
+        <li><a href="{% url 'detail' produkt.id %}">{{ produkt.nazwa }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>
+<li><a href="/produkty/{{ produkt.id }}">{{ produkt.nazwa }}</a></li>
